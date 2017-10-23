@@ -34,6 +34,7 @@
 
 	</style>
 
+</head>
 <body>
 <div class="logo">
 <img src="img/logo.png" alt="" width="170" height="170" />
@@ -45,7 +46,7 @@
 
 <div class="main">
 
-<s:iterator value = "buyItemInfoMap">
+<s:iterator value = "itemList">
 <a href='<s:url action="BuyItemAction" ><s:param name="id" ><s:property value="id"/></s:param></s:url>'>
 <img src="<s:property value="itemImage"/>" class="img"></a>
 </s:iterator>

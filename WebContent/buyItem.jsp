@@ -27,24 +27,37 @@
 		   background:#fff;
 		}
 
-		table {
-			text-align:center;
-			margin:0 auto;
-		}
+        .img {
+        position: absolute;
+        width:600px;
+        height:500px;
+        left: 15%;
+        top: 20%;
+        }
 
-	/* ========ID LAYOUT======== */
-		#top {
-		   width:780px;
-		   margin:30px auto;
-		   border:1px solid #333;
-		}
+        .name {
+        position:absolute;
+        top:20%;
+        left: 60%;
+        width: 200px;
+        border-bottom: solid 3px gray;
+        }
+
+
+        .price{
+        position:absolute;
+        top:30%;
+        left: 65%;
+        }
+
+        .stockbtn{
+        position:absolute;
+        top:50%;
+        left:65%;
+         }
 
 
 
-		#main {
-		   width: 100%;
-		   height: 500px;
-		   text-align: center;
 		}
 
 
@@ -52,58 +65,39 @@
 </head>
 <body>
 
-	<div id="main">
-		<div id="top">
-			<p>商品詳細</p>
-		</div>
-		<div>
-		<s:form action="BuyItemAction">
+   <s:action name ="BuyItemAction" />
+   <s:iterator value="itemList">
+  <div class ="image">
+  <img class="img" src="./<s:property value="itemImage"/>"  />
+  </div>
 
 
+<div class="name"><h1><s:property value="itemName" /></h1></div>
+
+<div class = "clear"></div>
+
+<div class="price"><h2><s:property value="itemPrice" /><s:text name="円" /></h2></div>
+
+<div class = "stockbtn">
+
+  <span>数量</span>
+  <select name="stock">
+  <option value="1" selected="selected">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+  </select>
+<a href='<s:url action="BuyItemConfirmAction" ><s:param name="id" ><s:property value="id"/></s:param></s:url>'><input type="submit" value="<s:text name="購入" />"></a>
+</div>
+<div class = "clear"></div>
 
 
-				<div class ="image">
-					<span>画像</span>
-
-					<img class="center" src="<s:property value="loginUserInfoMap.buyItem_image" />"  />
-				</div>
-
-
-					<div class = "namepricestock">
-						<h1><s:property value="loginUserInfoMap.buyItem_name" /></h1><br>
-						<h2><s:property value="loginUserInfoMap.buyItem_price" /><span>円</span></h2>
-						<span>数量</span>
-						<select name="stock">
-							<option value="1" selected="selected">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-						</select>
-					</div>
-
-
-				<tr>
-					<td>
-						<span>支払い方法</span>
-					</td>
-					<td>
-						<input type="radio" name="pay" value="1" checked="checked">現金払い
-						<input type="radio" name="pay" value="2">クレジットカード
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<s:submit value="購入"/>
-					</td>
-				</tr>
-
-		</s:form>
 			<div>
 				<span>前画面に戻る場合は</span><a href='<s:url action="HomeAction" />'>こちら</a>
-			</div>
-		</div>
-	</div>
 
+		</div>
+
+      </s:iterator>
 </body>
 </html>

@@ -3,6 +3,8 @@ package com.internousdev.template.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.internousdev.template.dto.BuyItemDTO;
 import com.internousdev.template.util.DBConnector;
@@ -20,31 +22,37 @@ public class BuyItemDAO {
 	 *
 	 * @return BuyItemDTO
 	 */
-	    public BuyItemDTO getBuyItemInfo() {
+	    ArrayList<BuyItemDTO> itemList=new ArrayList<BuyItemDTO>();
+	    public ArrayList<BuyItemDTO> select(int id) {
 
-		String sql = "SELECT id, item_name, item_price, item_image FROM item_info_transaction";
+		String sql = "select * from item_info_transaction where id=?";
+
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setInt(1, id);
 			ResultSet resultSet = preparedStatement.executeQuery();
 
-			if(resultSet.next()) {
+			while(resultSet.next()) {
 				buyItemDTO.setId(resultSet.getInt("id"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
 				buyItemDTO.setItemImage(resultSet.getString("item_image"));
 
+
+				itemList.add(buyItemDTO);
 			}
 
-		} catch(Exception e) {
+		} catch (SQLException e ) {
 			e.printStackTrace();
-		}
-
-		return buyItemDTO;
+		} finally {
+			try{
+				connection.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+			}
 	}
-
-	public BuyItemDTO getBuyItemDTO() {
-		return buyItemDTO;
+		return itemList;
 	}
 
 

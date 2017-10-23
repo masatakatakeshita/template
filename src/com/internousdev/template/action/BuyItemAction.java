@@ -1,20 +1,18 @@
 
 package com.internousdev.template.action;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.struts2.interceptor.SessionAware;
+import java.util.ArrayList;
 
 import com.internousdev.template.dao.BuyItemDAO;
+import com.internousdev.template.dto.BuyItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class BuyItemAction extends ActionSupport implements SessionAware {
+public class BuyItemAction extends ActionSupport  {
 
 	/**
 	 * アイテム情報を取得
 	 */
-	public BuyItemDAO buyItemDAO = new BuyItemDAO();
+
 
 	/**
 	 * アイテム購入個数
@@ -29,7 +27,6 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	/**
 	 * アイテム情報を格納
 	 */
-	public Map<String, Object>  buyItemInfoMap = new HashMap<>();
 
 	/**
 	 * 処理結果
@@ -46,8 +43,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	public String itemImage;
 
 
-
-
+	 public ArrayList<BuyItemDTO> itemList=new ArrayList<BuyItemDTO>();
 
 
 	/**
@@ -55,33 +51,31 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	 *
 	 * @author internous
 	 */
-	    public String execute() {
-		result = SUCCESS;
-		buyItemInfoMap.put("count", count);
-		int intCount = Integer.parseInt(buyItemInfoMap.get("count").toString());
-		int intPrice = Integer.parseInt(buyItemInfoMap.get("buyItem_price").toString());
+	 public String execute(){
+	        String result=ERROR;
+	        BuyItemDAO dao =new  BuyItemDAO();
 
-		buyItemInfoMap.put("total_price", intCount * intPrice);
-		String payment;
+	        itemList=dao.select(id);
 
-		if(pay.equals("1")) {
+	        if(itemList.size()>0){
+	            result=SUCCESS;
+	        }
 
-			payment = "現金払い";
-			buyItemInfoMap.put("pay", payment);
-		} else {
 
-			payment = "クレジットカード";
-			buyItemInfoMap.put("pay", payment);
+	        return result;
+	        }
+
+
+
+
+	    public ArrayList<BuyItemDTO> getPetList() {
+			return itemList;
 		}
-		return result;
-	}
 
 
-
-
-
-
-
+		public void setPetList(ArrayList<BuyItemDTO> itemList) {
+			this.itemList = itemList;
+		}
 
 
 
@@ -102,10 +96,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		this.pay = pay;
 	}
 
-	@Override
-	public void setSession(Map<String, Object> buyItemInfoMap) {
-		this.buyItemInfoMap = buyItemInfoMap;
-	}
+
 
 
 	public String getItemName() {
