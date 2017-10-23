@@ -8,6 +8,10 @@ public class BuyItemDTO {
 
 	public String itemPrice;
 
+	public String itemImage;
+
+
+
 	public String getItemName() {
 		return itemName;
 	}
@@ -15,6 +19,7 @@ public class BuyItemDTO {
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
+
 
 	public String getItemPrice() {
 		return itemPrice;
@@ -24,6 +29,7 @@ public class BuyItemDTO {
 		this.itemPrice = itemPrice;
 	}
 
+
 	public int getId() {
 		return id;
 	}
@@ -31,4 +37,19 @@ public class BuyItemDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
+	public String getItemImage(){
+		return itemImage;
+	}
+
+	public void setItemImage(String itemImage){
+		this.itemImage = itemImage;
+	}
+
+
+
+
+
+
 }

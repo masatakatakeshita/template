@@ -20,9 +20,9 @@ public class BuyItemDAO {
 	 *
 	 * @return BuyItemDTO
 	 */
-	public BuyItemDTO getBuyItemInfo() {
+	    public BuyItemDTO getBuyItemInfo() {
 
-		String sql = "SELECT id, item_name, item_price FROM item_info_transaction";
+		String sql = "SELECT id, item_name, item_price, item_image FROM item_info_transaction";
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -32,6 +32,8 @@ public class BuyItemDAO {
 				buyItemDTO.setId(resultSet.getInt("id"));
 				buyItemDTO.setItemName(resultSet.getString("item_name"));
 				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
+				buyItemDTO.setItemImage(resultSet.getString("item_image"));
+
 			}
 
 		} catch(Exception e) {
@@ -44,4 +46,6 @@ public class BuyItemDAO {
 	public BuyItemDTO getBuyItemDTO() {
 		return buyItemDTO;
 	}
+
+
 }

@@ -14,63 +14,59 @@
 	<meta name="keywords" content="" />
 	<title>Home画面</title>
 	<style type="text/css">
-		body {
-		   margin:0;
-		   padding:0;
-		   line-height:1.6;
-		   letter-spacing:1px;
-		   font-family:Verdana, Helvetica, sans-serif;
-		   font-size:12px;
-		   color:#333;
-		   background:#fff;
-		}
 
-		table {
-			text-align:center;
-			margin:0 auto;
-		}
+        .main{
+             margin-top:60px;
+             text-align: center;
+        }
 
-		/* ========TEMPLATE LAYOUT======== */
-		#top {
-		   width:780px;
-		   margin:30px auto;
-		   border:1px solid #333;
-		}
+        .logo{
+             margin-top:40px;
+             margin-left:160px;
+        }
 
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
-		}
+        .button{
+             margin-top:-10px;
+             margin-left:1310px;
+        }
 
-		#main {
-		   width: 100%;
-		   height: 500px;
-		   text-align: center;
-		}
 
-		#footer {
-			width: 100%;
-			height: 80px;
-			background-color: black;
-			clear:both;
-		}
 
-		#text-center {
-			display: inline-block;
-			text-align: center;
-		}
 	</style>
-</head>
+
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
-	<div id="main">
-		<div id="top">
-			<p>Home</p>
-		</div>
+<div class="logo">
+<img src="img/logo.png" alt="" width="170" height="170" />
+</div>
+
+<div class="button">
+<a href="login.jsp"><input type="submit" value="ログイン"></a>
+</div>
+
+<div class="main">
+
+<s:iterator value = "buyItemInfoMap">
+<a href='<s:url action="BuyItemAction" ><s:param name="id" ><s:property value="id"/></s:param></s:url>'>
+<img src="<s:property value="itemImage"/>" class="img"></a>
+</s:iterator>
+
+
+<s:form >
+<a href='<s:url action="BuyItemAction" ><s:param name="id" >1</s:param></s:url>'><img src="img/plants1.jpg" alt="" width="400" height="300" /></a>
+<a href='<s:url action="BuyItemAction" ><s:param name="id" >2</s:param></s:url>'><img src="img/plants2.jpg" alt="" width="400" height="300" /></a>
+<a href='<s:url action="BuyItemAction" ><s:param name="id" >3</s:param></s:url>'><img src="img/plants3.jpg" alt="" width="400" height="300" /></a>
+
+<a href='<s:url action="BuyItemAction" ><s:param name="id" >4</s:param></s:url>'><img src="img/plants4.jpg" alt="" width="400" height="300" /></a>
+<a href='<s:url action="BuyItemAction" ><s:param name="id" >5</s:param></s:url>'><img src="img/plants5.jpg" alt="" width="400" height="300" /></a>
+<a href='<s:url action="BuyItemAction" ><s:param name="id" >6</s:param></s:url>'><img src="img/plants6.jpg" alt="" width="400" height="300" /></a>
+</s:form>
+</div>
+
+
+
+
+
+
 
 		<div id="text-center">
 			<s:form action="HomeAction">
@@ -80,10 +76,7 @@
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
 			</s:if>
 		</div>
-	</div>
-	<div id="footer">
-	 	<div id="pr">
-		</div>
-	</div>
+
+
 </body>
 </html>

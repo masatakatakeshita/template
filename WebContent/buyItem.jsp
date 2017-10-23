@@ -39,11 +39,7 @@
 		   border:1px solid #333;
 		}
 
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
-		}
+
 
 		#main {
 		   width: 100%;
@@ -51,56 +47,42 @@
 		   text-align: center;
 		}
 
-		#footer {
-			width: 100%;
-			height: 80px;
-			background-color: black;
-			clear:both;
-		}
+
 	</style>
 </head>
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
+
 	<div id="main">
 		<div id="top">
-			<p>BuyItem</p>
+			<p>商品詳細</p>
 		</div>
 		<div>
 		<s:form action="BuyItemAction">
-			<table>
-				<tr>
-					<td>
-						<span>商品名</span>
-					</td>
-					<td>
-						<s:property value="loginUserInfoMap.buyItem_name" /><br>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<span>値段</span>
-					</td>
-					<td>
-						<s:property value="loginUserInfoMap.buyItem_price" /><span>円</span>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<span>購入個数</span>
-					</td>
-					<td>
-						<select name="count">
+
+
+
+
+				<div class ="image">
+					<span>画像</span>
+
+					<img class="center" src="<s:property value="loginUserInfoMap.buyItem_image" />"  />
+				</div>
+
+
+					<div class = "namepricestock">
+						<h1><s:property value="loginUserInfoMap.buyItem_name" /></h1><br>
+						<h2><s:property value="loginUserInfoMap.buyItem_price" /><span>円</span></h2>
+						<span>数量</span>
+						<select name="stock">
 							<option value="1" selected="selected">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
 							<option value="4">4</option>
 							<option value="5">5</option>
 						</select>
-					</td>
-				</tr>
+					</div>
+
+
 				<tr>
 					<td>
 						<span>支払い方法</span>
@@ -115,17 +97,13 @@
 						<s:submit value="購入"/>
 					</td>
 				</tr>
-			</table>
+
 		</s:form>
 			<div>
-				<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
-				<p>マイぺージは<a href='<s:url action="MyPageAction" />'>こちら</a></p>
+				<span>前画面に戻る場合は</span><a href='<s:url action="HomeAction" />'>こちら</a>
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-	 	<div id="pr">
-		</div>
-	</div>
+
 </body>
 </html>

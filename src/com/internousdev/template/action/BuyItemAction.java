@@ -36,12 +36,26 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	 */
 	public String result;
 
+
+	public int id;
+
+	public String itemName;
+
+	public String itemPrice;
+
+	public String itemImage;
+
+
+
+
+
+
 	/**
 	 * 商品情報取得メソッド
 	 *
 	 * @author internous
 	 */
-	public String execute() {
+	    public String execute() {
 		result = SUCCESS;
 		buyItemInfoMap.put("count", count);
 		int intCount = Integer.parseInt(buyItemInfoMap.get("count").toString());
@@ -61,6 +75,16 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		}
 		return result;
 	}
+
+
+
+
+
+
+
+
+
+
 
 	public int getCount() {
 		return count;
@@ -82,4 +106,41 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> buyItemInfoMap) {
 		this.buyItemInfoMap = buyItemInfoMap;
 	}
+
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+
+	public String getItemPrice() {
+		return itemPrice;
+	}
+
+	public void setItemPrice(String itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public String getItemImage(){
+		return itemImage;
+	}
+
+	public void setItemImage(String itemImage){
+		this.itemImage = itemImage;
+	}
+
 }
