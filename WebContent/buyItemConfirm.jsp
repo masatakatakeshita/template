@@ -80,20 +80,17 @@
 			<s:form>
 				<tr>
 					<td>商品名</td>
-					<td><s:property value="buyItemInfoMap.buyItem_name" /></td>
+					<td><s:property value="itemName" /></td>
 				</tr>
 				<tr>
 					<td>値段</td>
-					<td><s:property value="buyItemInfoMap.total_price" /><span>円</span></td>
+					<td><s:property value="itemPrice" /><span>円</span></td>
 				</tr>
 				<tr>
 					<td>購入個数</td>
-					<td><s:property value="buyItemInfoMap.count" /><span>個</span></td>
+					<td><s:property value="count" /><span>個</span></td>
 				</tr>
-				<tr>
-					<td>支払い方法</td>
-					<td><s:property value="buyItemInfoMap.pay" /></td>
-				</tr>
+
 				<tr>
 					<td>
 						<br>
@@ -101,7 +98,7 @@
 				</tr>
 				<tr>
 					<td><input type="button" value="戻る" onclick="submitAction('HomeAction')" /></td>
-					<td><input type="button" value="完了" onclick="submitAction('BuyItemConfirmAction')" /></td>
+					<td><input type="button" value="完了" onclick="submitAction('BuyItemComplateAction')" /></td>
 				</tr>
 			</s:form>
 		</div>

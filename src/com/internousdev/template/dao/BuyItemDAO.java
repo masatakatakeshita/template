@@ -17,13 +17,43 @@ public class BuyItemDAO {
 
 	private BuyItemDTO buyItemDTO = new BuyItemDTO();
 
+	public ArrayList<BuyItemDTO> getBuyItemInfo(){
+		ArrayList<BuyItemDTO> itemList=new ArrayList<BuyItemDTO>();
+		String sql = "select * from item_info_transaction";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while(resultSet.next()) {
+				buyItemDTO.setId(resultSet.getInt("id"));
+				buyItemDTO.setItemName(resultSet.getString("item_name"));
+				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
+				buyItemDTO.setItemImage(resultSet.getString("item_image"));
+
+
+				itemList.add(buyItemDTO);
+			}
+
+		} catch (SQLException e ) {
+			e.printStackTrace();
+		} finally {
+			try{
+				connection.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
+		return itemList;
+	}
+
 	/**
 	 * 商品情報取得メソッド
 	 *
 	 * @return BuyItemDTO
 	 */
-	    ArrayList<BuyItemDTO> itemList=new ArrayList<BuyItemDTO>();
-	    public ArrayList<BuyItemDTO> select(int id) {
+	ArrayList<BuyItemDTO> itemList=new ArrayList<BuyItemDTO>();
+	public ArrayList<BuyItemDTO> select(int id) {
 
 		String sql = "select * from item_info_transaction where id=?";
 
@@ -48,10 +78,10 @@ public class BuyItemDAO {
 		} finally {
 			try{
 				connection.close();
-		}catch(SQLException e){
-			e.printStackTrace();
+			}catch(SQLException e){
+				e.printStackTrace();
 			}
-	}
+		}
 		return itemList;
 	}
 

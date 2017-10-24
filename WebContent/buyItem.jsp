@@ -43,7 +43,6 @@
         border-bottom: solid 3px gray;
         }
 
-
         .price{
         position:absolute;
         top:30%;
@@ -56,16 +55,13 @@
         left:65%;
          }
 
-
-
 		}
-
 
 	</style>
 </head>
 <body>
 
-   <s:action name ="BuyItemAction" />
+   <form action="BuyItemConfirmAction">
    <s:iterator value="itemList">
   <div class ="image">
   <img class="img" src="./<s:property value="itemImage"/>"  />
@@ -74,7 +70,6 @@
 
 <div class="name"><h1><s:property value="itemName" /></h1></div>
 
-<div class = "clear"></div>
 
 <div class="price"><h2><s:property value="itemPrice" /><s:text name="円" /></h2></div>
 
@@ -90,6 +85,8 @@
   </select>
 <a href='<s:url action="BuyItemConfirmAction" ><s:param name="id" ><s:property value="id"/></s:param></s:url>'><input type="submit" value="<s:text name="購入" />"></a>
 </div>
+</s:iterator>
+</form>
 <div class = "clear"></div>
 
 
@@ -98,6 +95,6 @@
 
 		</div>
 
-      </s:iterator>
+
 </body>
 </html>

@@ -13,7 +13,12 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 
 	public Map<String,Object> buyItemInfoSession = new HashMap<String, Object>();
 
-	public String result;
+
+
+
+	private String result;
+
+	private String stock;
 
 	public BuyItemComplateDAO buyItemComplateDAO = new BuyItemComplateDAO();
 
@@ -24,12 +29,14 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	 */
 	public String execute() throws SQLException {
 
+		if (!buyItemInfoSession.containsKey("login_user_id")) {
+			return LOGIN;
+		}
 		buyItemComplateDAO.buyItemeInfo(
 				buyItemInfoSession.get("id").toString(),
 				buyItemInfoSession.get("login_user_id").toString(),
-				buyItemInfoSession.get("total_price").toString(),
-				buyItemInfoSession.get("count").toString(),
-				buyItemInfoSession.get("pay").toString());
+				buyItemInfoSession.get("price").toString(),
+				stock.toString());
 
 		result = SUCCESS;
 		return result;
@@ -38,5 +45,19 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	@Override
 	public void setSession(Map<String, Object> buyItemInfoSession) {
 		this.buyItemInfoSession = buyItemInfoSession;
+	}
+
+	/**
+	 * @return stock
+	 */
+	public String getStock() {
+		return this.stock;
+	}
+
+	/**
+	 * @param stock セットする stock
+	 */
+	public void setStock(String stock) {
+		this.stock = stock;
 	}
 }

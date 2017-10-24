@@ -2,17 +2,20 @@
 package com.internousdev.template.action;
 
 import java.util.ArrayList;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.internousdev.template.dao.BuyItemDAO;
 import com.internousdev.template.dto.BuyItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class BuyItemAction extends ActionSupport  {
+public class BuyItemAction extends ActionSupport implements SessionAware{
 
-	/**
-	 * アイテム情報を取得
-	 */
 
+	public BuyItemDAO buyItemDAO = new BuyItemDAO();
+
+	private Map<String, Object> session;
 
 	/**
 	 * アイテム購入個数
@@ -43,7 +46,10 @@ public class BuyItemAction extends ActionSupport  {
 	public String itemImage;
 
 
+
 	 public ArrayList<BuyItemDTO> itemList=new ArrayList<BuyItemDTO>();
+
+
 
 
 	/**
@@ -58,9 +64,10 @@ public class BuyItemAction extends ActionSupport  {
 	        itemList=dao.select(id);
 
 	        if(itemList.size()>0){
+	        	session.put("id", id);
+	        	session.put("price", itemList.get(0).getItemPrice());
 	            result=SUCCESS;
 	        }
-
 
 	        return result;
 	        }
@@ -68,14 +75,14 @@ public class BuyItemAction extends ActionSupport  {
 
 
 
-	    public ArrayList<BuyItemDTO> getPetList() {
-			return itemList;
-		}
+	 public ArrayList<BuyItemDTO> getItemList() {
+	    return itemList;
+	}
 
 
-		public void setPetList(ArrayList<BuyItemDTO> itemList) {
-			this.itemList = itemList;
-		}
+	public void setItemList(ArrayList<BuyItemDTO> itemList) {
+		this.itemList = itemList;
+	}
 
 
 
@@ -133,5 +140,12 @@ public class BuyItemAction extends ActionSupport  {
 	public void setItemImage(String itemImage){
 		this.itemImage = itemImage;
 	}
+
+
+	public void setSession(Map<String, Object> session){
+		this.session = session;
+	}
+
+
 
 }
