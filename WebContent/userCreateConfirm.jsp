@@ -35,16 +35,18 @@
 
 		/* ========ID LAYOUT======== */
 		#top {
-		   width:780px;
-		   margin:30px auto;
+		   width:400px;
+		   margin:200px auto;
 		   border:1px solid #333;
+           padding: 0.5em 1em;
+           color: black;
+           background: #f9f9f9;
+           border-top: solid 5px black;
+           box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+           text-align: center;
 		}
 
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
-		}
+
 
 		#main {
 		   width: 100%;
@@ -56,25 +58,20 @@
 			border: 1px solid #000000;
 		}
 
-		#footer {
-			width: 100%;
-			height: 80px;
-			background-color: black;
-			clear:both;
-		}
+		body {
+            background-image: url("img/t1.png" );
+            }
+
 	</style>
 </head>
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
-	<div id="main">
+
+
 		<div id="top">
-			<p>UserCreateConfirm</p>
-		</div>
-		<div>
 			<h3>登録する内容は以下でよろしいですか。</h3>
+
+
+
 			<table>
 				<s:form action="UserCreateComplateAction">
 					<tr id="box">
@@ -87,7 +84,7 @@
 					</tr>
 					<tr id="box">
 						<td>
-							<label>ログインPASS:</label>
+							<label>ログインPassword:</label>
 						</td>
 						<td>
 							<s:property value="loginPassword" escape="false" />
@@ -109,10 +106,7 @@
 				</s:form>
 			</table>
 		</div>
-	</div>
-	<div id="footer">
-	 	<div id="pr">
-		</div>
-	</div>
+
+
 </body>
 </html>

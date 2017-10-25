@@ -46,13 +46,9 @@
 
 <div class="main">
 
-<s:iterator value = "itemList">
-<a href='<s:url action="BuyItemAction" ><s:param name="id" ><s:property value="id"/></s:param></s:url>'>
-<img src="<s:property value="itemImage"/>" class="img"></a>
-</s:iterator>
 
 
-<s:form >
+
 <a href='<s:url action="BuyItemAction" ><s:param name="id" >1</s:param></s:url>'><img src="img/plants1.jpg" alt="" width="400" height="300" /></a>
 <a href='<s:url action="BuyItemAction" ><s:param name="id" >2</s:param></s:url>'><img src="img/plants2.jpg" alt="" width="400" height="300" /></a>
 <a href='<s:url action="BuyItemAction" ><s:param name="id" >3</s:param></s:url>'><img src="img/plants3.jpg" alt="" width="400" height="300" /></a>
@@ -60,7 +56,7 @@
 <a href='<s:url action="BuyItemAction" ><s:param name="id" >4</s:param></s:url>'><img src="img/plants4.jpg" alt="" width="400" height="300" /></a>
 <a href='<s:url action="BuyItemAction" ><s:param name="id" >5</s:param></s:url>'><img src="img/plants5.jpg" alt="" width="400" height="300" /></a>
 <a href='<s:url action="BuyItemAction" ><s:param name="id" >6</s:param></s:url>'><img src="img/plants6.jpg" alt="" width="400" height="300" /></a>
-</s:form>
+
 </div>
 
 
@@ -70,9 +66,7 @@
 
 
 		<div id="text-center">
-			<s:form action="HomeAction">
-				<s:submit value="商品購入"/>
-			</s:form>
+
 			<s:if test="#session.id != null">
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
 			</s:if>

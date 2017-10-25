@@ -35,15 +35,11 @@
 	/* ========ID LAYOUT======== */
 		#top {
 		   width:780px;
-		   margin:30px auto;
+		   margin:150px auto;
 		   border:1px solid #333;
+		    background:#fff;
 		}
 
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
-		}
 
 		#main {
 		   width: 100%;
@@ -51,35 +47,22 @@
 		   text-align: center;
 		}
 
-		#footer {
-			width: 100%;
-			height: 80px;
-			background-color: black;
-			clear:both;
-		}
+        body {
+            background-image: url("img/t1.png" );
+            }
+
 	</style>
 </head>
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
+
 	<div id="main">
 		<div id="top">
-			<p>BuyItemComplate</p>
+			<h2>購入手続きが完了致しました。</h2>
 		</div>
-		<div>
-			<p>購入手続きが完了致しました。</p>
-			<div>
 				<a href='<s:url action="MyPageAction" />'>マイページ</a><span>から購入履歴の確認が可能です。</span>
 				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
-			</div>
-		</div>
 	</div>
-	<div id="footer">
-		<div id="pr">
-		</div>
-	</div>
+
 </body>
 </html>
 

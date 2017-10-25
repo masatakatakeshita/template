@@ -30,6 +30,7 @@
 		table {
 			text-align:center;
 			margin:0 auto;
+			background:#fff;
 		}
 
 	/* ========ID LAYOUT======== */
@@ -37,13 +38,10 @@
 		   width:780px;
 		   margin:30px auto;
 		   border:1px solid #333;
+		   background:#fff;
 		}
 
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
-		}
+
 
 		#main {
 		   width: 100%;
@@ -51,12 +49,9 @@
 		   text-align: center;
 		}
 
-		#footer {
-			width: 100%;
-			height: 80px;
-			background-color: black;
-			clear:both;
-		}
+        body {
+            background-image: url("img/t1.png" );
+            }
 
 		#text-right {
 			display: inline-block;
@@ -65,13 +60,10 @@
 	</style>
 </head>
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
+
 	<div id="main">
 		<div id="top">
-			<p>MyPage</p>
+			<h3>マイページ</h3>
 		</div>
 		<div>
 		<s:if test="myPageList == null">
@@ -84,7 +76,6 @@
 				<th>商品名</th>
 				<th>値段</th>
 				<th>購入個数</th>
-				<th>支払い方法</th>
 				<th>購入日</th>
 			</tr>
 			<s:iterator value="myPageList">
@@ -92,7 +83,6 @@
 					<td><s:property value="itemName" /></td>
 					<td><s:property value="totalPrice" /><span>円</span></td>
 					<td><s:property value="totalCount" /><span>個</span></td>
-					<td><s:property value="payment" /></td>
 					<td><s:property value="insert_date" /></td>
 				</tr>
 			</s:iterator>
@@ -111,9 +101,6 @@
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-		<div id="pr">
-		</div>
-	</div>
+
 </body>
 </html>

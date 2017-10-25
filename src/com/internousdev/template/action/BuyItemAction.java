@@ -27,15 +27,12 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	 */
 	public String pay;
 
-	/**
-	 * アイテム情報を格納
-	 */
+
 
 	/**
 	 * 処理結果
 	 */
 	public String result;
-
 
 	public int id;
 
@@ -47,7 +44,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 
 
 
-	 public ArrayList<BuyItemDTO> itemList=new ArrayList<BuyItemDTO>();
+	public ArrayList<BuyItemDTO> itemList=new ArrayList<BuyItemDTO>();
 
 
 
@@ -75,15 +72,13 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 
 
 
-	 public ArrayList<BuyItemDTO> getItemList() {
+	public ArrayList<BuyItemDTO> getItemList() {
 	    return itemList;
 	}
-
 
 	public void setItemList(ArrayList<BuyItemDTO> itemList) {
 		this.itemList = itemList;
 	}
-
 
 
 
@@ -95,6 +90,8 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 		this.count = count;
 	}
 
+
+
 	public String getPay() {
 		return pay;
 	}
@@ -102,7 +99,6 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	public void setPay(String pay) {
 		this.pay = pay;
 	}
-
 
 
 
@@ -115,6 +111,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	}
 
 
+
 	public String getItemPrice() {
 		return itemPrice;
 	}
@@ -122,6 +119,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	public void setItemPrice(String itemPrice) {
 		this.itemPrice = itemPrice;
 	}
+
 
 
 	public int getId() {
@@ -133,6 +131,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	}
 
 
+
 	public String getItemImage(){
 		return itemImage;
 	}
@@ -140,6 +139,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	public void setItemImage(String itemImage){
 		this.itemImage = itemImage;
 	}
+
 
 
 	public void setSession(Map<String, Object> session){

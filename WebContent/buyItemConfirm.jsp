@@ -90,14 +90,13 @@
 					<td>購入個数</td>
 					<td><s:property value="count" /><span>個</span></td>
 				</tr>
-
 				<tr>
 					<td>
 						<br>
 					</td>
 				</tr>
 				<tr>
-					<td><input type="button" value="戻る" onclick="submitAction('HomeAction')" /></td>
+					<td><input type="button" value="戻る" onclick="submitAction('GoHomeAction')" /></td>
 					<td><input type="button" value="完了" onclick="submitAction('BuyItemComplateAction')" /></td>
 				</tr>
 			</s:form>

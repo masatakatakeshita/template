@@ -34,16 +34,20 @@
 
 		/* ========ID LAYOUT======== */
 		#top {
-		   width:780px;
-		   margin:30px auto;
+		   width:400px;
+		   margin:200px auto;
 		   border:1px solid #333;
-		}
+           padding: 0.5em 1em;
+           color: black;
+           background: #f9f9f9;
+           border-top: solid 5px black;
+           box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+           text-align: center;
 
-		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
 		}
+body {
+            background-image: url("img/t1.png" ); }
+
 
 		#main {
 		   width: 100%;
@@ -51,24 +55,15 @@
 		   text-align: center;
 		}
 
-		#footer {
-			width: 100%;
-			height: 80px;
-			background-color: black;
-			clear:both;
-		}
+
 	</style>
 </head>
 <body>
-	<div id="header">
-	 	<div id="pr">
-		</div>
-	</div>
-	<div id="main">
+
+
 		<div id="top">
-			<p>UserCreate</p>
-		</div>
-		<div>
+			<h3>新規ユーザー登録</h3>
+
 			<s:if test="errorMassage != ''">
 				<s:property value="errorMassage" escape="false" />
 			</s:if>
@@ -79,12 +74,12 @@
 						<label>ログインID:</label>
 					</td>
 					<td>
-						<input type="text" name="loginUserId" value="" />
+						<input type="text" name="loginUserId"  value="" />
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>ログインPASS:</label>
+						<label>ログインPassword:</label>
 					</td>
 					<td>
 						<input type="text" name="loginPassword" value="" />
@@ -104,11 +99,8 @@
 			<div>
 				<span>前画面に戻る場合は</span><a href='<s:url action="HomeAction" />'>こちら</a>
 			</div>
-		</div>
+
 	</div>
-		<div id="footer">
-	 	<div id="pr">
-		</div>
-	</div>
+
 </body>
 </html>
