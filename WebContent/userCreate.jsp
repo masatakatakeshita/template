@@ -25,6 +25,7 @@
 		   font-size:12px;
 		   color:#333;
 		   background:#fff;
+		   background-image: url("img/t1.png" );
 		}
 
 		table {
@@ -43,23 +44,19 @@
            border-top: solid 5px black;
            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
            text-align: center;
-
-		}
-body {
-            background-image: url("img/t1.png" ); }
-
+	   	}
 
 		#main {
 		   width: 100%;
 		   height: 500px;
 		   text-align: center;
-		}
+	    }
 
 
 	</style>
 </head>
-<body>
 
+<body>
 
 		<div id="top">
 			<h3>新規ユーザー登録</h3>
@@ -67,8 +64,9 @@ body {
 			<s:if test="errorMassage != ''">
 				<s:property value="errorMassage" escape="false" />
 			</s:if>
+
 			<table>
-			<s:form action="UserCreateConfirmAction">
+			  <s:form action="UserCreateConfirmAction">
 				<tr>
 					<td>
 						<label>ログインID:</label>
@@ -94,13 +92,12 @@ body {
 					</td>
 				</tr>
 				<s:submit value="登録"/>
-			</s:form>
+			  </s:form>
 			</table>
 			<div>
 				<span>前画面に戻る場合は</span><a href='<s:url action="HomeAction" />'>こちら</a>
 			</div>
-
-	</div>
+	    </div>
 
 </body>
 </html>

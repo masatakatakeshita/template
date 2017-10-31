@@ -47,8 +47,8 @@
 		<!-- BuyItemAction -->
 		<action name="BuyItemAction" class="com.internousdev.template.action.BuyItemAction" method="execute">
 			<result name="success">buyItem.jsp</result>
-			<result name="error">buyItem.jsp</result>
-			<result name="login">login.jsp</result>
+			<result name="error">login.jsp</result>
+			<result name="login">buyItem.jsp</result>
 		</action>
 
 		<!-- BuyItemConfirmAction -->

@@ -25,6 +25,7 @@
 		   font-size:12px;
 		   color:#333;
 		   background:#fff;
+		   background-image: url("img/t1.png" );
 		}
 
 		table {
@@ -35,8 +36,9 @@
 		/* ========ID LAYOUT======== */
 		#top {
 		   width:780px;
-		   margin:30px auto;
+		   margin:200px auto;
 		   border:1px solid #333;
+		   background:#fff;
 		}
 
 		#main {
@@ -45,22 +47,18 @@
 		   text-align: center;
 		}
 
-		 body {
-            background-image: url("img/t1.png" );
-            }
 
 	</style>
 </head>
+
 <body>
 
 	<div id="main">
 		<div id="top">
 			<h2>ユーザーの登録が完了致しました。</h2>
 		</div>
-				<a href='<s:url action="HomeAction" />'>ログインへ</a>
-			</div>
-
-
+			<a href='<s:url action="HomeAction" />'>ログインへ</a>
+    </div>
 
 </body>
 </html>

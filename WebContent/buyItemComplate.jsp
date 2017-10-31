@@ -25,6 +25,7 @@
 		   font-size:12px;
 		   color:#333;
 		   background:#fff;
+		   background-image: url("img/t1.png" );
 		}
 
 		table {
@@ -47,12 +48,10 @@
 		   text-align: center;
 		}
 
-        body {
-            background-image: url("img/t1.png" );
-            }
 
 	</style>
 </head>
+
 <body>
 
 	<div id="main">

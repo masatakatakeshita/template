@@ -25,6 +25,7 @@
 		   font-size:12px;
 		   color:#333;
 		   background:#fff;
+		   background-image: url("img/t1.png" );
 		}
 
 		table {
@@ -41,31 +42,28 @@
 		   background:#fff;
 		}
 
-
-
 		#main {
 		   width: 100%;
 		   height: 500px;
 		   text-align: center;
 		}
 
-        body {
-            background-image: url("img/t1.png" );
-            }
-
 		#text-right {
 			display: inline-block;
 			text-align: right;
 		}
+
+
 	</style>
 </head>
+
 <body>
 
 	<div id="main">
 		<div id="top">
 			<h3>マイページ</h3>
 		</div>
-		<div>
+		  <div>
 		<s:if test="myPageList == null">
 			<h3>ご購入情報はありません。</h3>
 		</s:if>
@@ -99,7 +97,7 @@
 				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
 			</div>
-		</div>
+		  </div>
 	</div>
 
 </body>

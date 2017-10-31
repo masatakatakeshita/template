@@ -15,7 +15,6 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 
 	public BuyItemDAO buyItemDAO = new BuyItemDAO();
 
-	private Map<String, Object> session;
 
 	/**
 	 * アイテム購入個数
@@ -27,26 +26,40 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	 */
 	public String pay;
 
-
-
 	/**
 	 * 処理結果
 	 */
 	public String result;
 
+	/**
+	 * 商品id
+	 */
 	public int id;
 
+	/**
+	 * 商品名
+	 */
 	public String itemName;
 
+	/**
+	 * 価格
+	 */
 	public String itemPrice;
 
+	/**
+	 * 画像
+	 */
 	public String itemImage;
 
-
-
+	/**
+	 * リスト
+	 */
 	public ArrayList<BuyItemDTO> itemList=new ArrayList<BuyItemDTO>();
 
-
+	/**
+	 * セッション情報
+	 */
+	private Map<String, Object> session;
 
 
 	/**

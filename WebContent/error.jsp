@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>m(_ _)m Error Page... OTL</title>
+<title>Error画面</title>
 </head>
 <body>
 <h1>エラーが発生しました。</h1>
-<p>恐れ入りますが、<a href='<s:url action="HomeAction" />'>ログイン</a>からやり直してください。</p>
+<p>恐れ入りますが、<a href='<s:url action="GoHomeAction" />'>ホーム</a>からやり直してください。</p>
 </body>
 </html>

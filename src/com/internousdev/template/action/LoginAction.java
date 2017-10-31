@@ -90,6 +90,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		return result;
 	}
 
+
+
 	public String getLoginUserId() {
 		return loginUserId;
 	}

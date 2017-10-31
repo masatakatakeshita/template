@@ -26,6 +26,7 @@
 		   font-size:12px;
 		   color:#333;
 		   background:#fff;
+		     background-image: url("img/t1.png" );
 		}
 
 		table {
@@ -46,8 +47,6 @@
            text-align: center;
 		}
 
-
-
 		#main {
 		   width: 100%;
 		   height: 500px;
@@ -58,19 +57,14 @@
 			border: 1px solid #000000;
 		}
 
-		body {
-            background-image: url("img/t1.png" );
-            }
 
 	</style>
 </head>
-<body>
 
+<body>
 
 		<div id="top">
 			<h3>登録する内容は以下でよろしいですか。</h3>
-
-
 
 			<table>
 				<s:form action="UserCreateComplateAction">
@@ -106,7 +100,6 @@
 				</s:form>
 			</table>
 		</div>
-
 
 </body>
 </html>

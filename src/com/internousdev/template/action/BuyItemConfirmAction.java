@@ -15,9 +15,14 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 
 
 
-
+	/**
+	 * 処理結果
+	 */
 	private String result;
 
+	/**
+	 * 数量
+	 */
 	private String stock;
 
 	public BuyItemComplateDAO buyItemComplateDAO = new BuyItemComplateDAO();
